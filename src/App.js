@@ -2,7 +2,7 @@ import React from 'react';
 
 function App() {
   return (
-    <div className="bg-gray-800 min-w-full min-h-screen flex justify-center items-center space-x-7">
+    <div className="bg-gray-850 min-w-full min-h-screen flex justify-center items-center space-x-7">
       <div className="bg-white w-60 h-36 rounded-md flex justify-center items-center shadow-md cursor-pointer transform transition duration-500 hover:scale-110 filter grayscale hover:grayscale-0 overflow-hidden text-white text-2xl ">
         <img
           src="/img/characters.jpg"
