@@ -11,7 +11,10 @@ module.exports = {
     },
   },
   variants: {
-    extend: { grayscale: ['hover'] },
+    extend: {
+      grayscale: ['hover'],
+      brightness: ['hover'],
+    },
   },
   plugins: [],
 };
