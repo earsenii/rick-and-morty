@@ -1,25 +1,30 @@
 import React from 'react';
 
-function CharacterCardMini({ character, loading }) {
+function CharacterCardFull({ character, loading }) {
   return (
-    <>
-      {character.map((item, index) => (
-        <div
-          key={index}
-          className="overflow-hidden relative justify-end  cursor-pointer flex flex-col rounded-md bg-gray-850 w-60 h-48 z-50 object-cover text-white transform transition duration-500 hover:scale-105 ml-3">
-          <img
-            src={item.image}
-            alt={item.name}
-            className="w-full h-full object-center object-cover filter brightness-50"
-          />
-          <div className="absolute p-3 flex flex-col">
-            <div className="font-semibold text-xl">{item.name}</div>
-            <div className="text-gray-300 text-sm">Episodes: {item.episode.length}</div>
+    <div className="overflow-hidden absolute flex rounded-md w-2/5 h-1/4 z-50 object-cover text-white bg-gray-600 cursor-default shadow-md">
+      <div className="w-60 h-full object-center object-cover">
+        <img src={character.image} alt={character.name} />
+      </div>
+      <div className="pl-2 flex flex-col">
+        <div className="font-bold text-3xl">{character.name}</div>
+        <div className="flex space-x-4 mt-4">
+          <div className="flex flex-col -space-y-1.5">
+            <div className="text-gray-300 text-md">Status</div>
+            <div className="font-semibold text-xl">{character.status}</div>
+          </div>
+          <div className="flex flex-col -space-y-1.5">
+            <div className="text-gray-300 text-md">Species</div>
+            <div className="font-semibold text-xl">{character.species}</div>
+          </div>
+          <div className="flex flex-col -space-y-1.5">
+            <div className="text-gray-300 text-md">Gender</div>
+            <div className="font-semibold text-xl">{character.gender}</div>
           </div>
         </div>
-      ))}
-    </>
+      </div>
+    </div>
   );
 }
 
-export default CharacterCardMini;
+export default CharacterCardFull;
