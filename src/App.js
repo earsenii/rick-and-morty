@@ -11,9 +11,7 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/characters/:id">
-          <CharacterFull />
-        </Route>
+        <Route path="/characters/:id" exact component={CharacterFull} />
         <Route path="/" exact>
           <Home />
         </Route>
