@@ -6,7 +6,7 @@ import HomePageCard from '../components/HomePageCard';
 function Home() {
   return (
     <div className="bg-gray-850">
-      <div className="min-w-full min-h-screen flex justify-center items-center space-x-7">
+      <div className="min-w-full min-h-screen flex justify-center items-center lg:flex-row lg:space-x-5 lg:space-y-0 md:flex-col md:space-y-5 sm:flex-col sm:space-y-3">
         <Link to="/characters">
           <HomePageCard text="Characters" image="/img/characters.jpg" />
         </Link>
