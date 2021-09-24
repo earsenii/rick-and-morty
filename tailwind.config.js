@@ -18,8 +18,8 @@ module.exports = {
   },
   variants: {
     extend: {
-      grayscale: ['hover'],
-      brightness: ['hover'],
+      grayscale: ['hover, active, focus'],
+      brightness: ['hover, active, focus'],
     },
   },
   plugins: [],
