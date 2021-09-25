@@ -11,10 +11,14 @@ module.exports = {
     height: {
       245: '35rem',
     },
+    width: {
+      245: '35rem',
+    },
     extend: {
       colors: {
         gray: {
-          850: '#24282F',
+          850: '#2d323b',
+          825: '#343A45',
         },
       },
     },
