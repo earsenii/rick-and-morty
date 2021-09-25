@@ -4,11 +4,9 @@ import { Link } from 'react-router-dom';
 function CharacterCardMini({ character }) {
   return (
     <>
-      {character.map((item, index) => (
+      {character.map((item) => (
         <Link to={`/characters/${item.id}`}>
-          <div
-            key={item.id}
-            className="overflow-hidden relative justify-end  cursor-pointer flex flex-col rounded-md bg-gray-850 w-56 h-40 z-50 object-cover text-white transform transition duration-500 hover:scale-105 md:ml-2 md:mb-2 lg:w-60 lg:h-56 xl:w-64 xl:h-60">
+          <div className="overflow-hidden relative justify-end  cursor-pointer flex flex-col rounded-md bg-gray-850 w-56 h-40 z-50 object-cover text-white transform transition duration-500 hover:scale-105 md:ml-3 md:mb-3 lg:w-56 lg:h-52 xl:w-60 xl:h-56">
             <img
               src={item.image}
               alt={item.name}
