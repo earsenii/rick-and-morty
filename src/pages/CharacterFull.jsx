@@ -29,7 +29,7 @@ function CharacterFull({ match }) {
 
   if (loading === true || !character) {
     return (
-      <div className="bg-gray-850 min-w-full min-h-screen flex justify-center items-center space-x-7">
+      <div className="bg-gray-850 min-w-full min-h-screen flex justify-center items-center">
         <h1 className="text-center text-white text-3xl">Loading</h1>
       </div>
     );
@@ -45,7 +45,7 @@ function CharacterFull({ match }) {
 
   return (
     <div className="bg-gray-850 min-w-full min-h-screen flex justify-center">
-      <div className="w-3/4 mt-5 flex justify-center flex-wrap">
+      <div className="w-3/4 mt-5 flex justify-center">
         <CharacterCardFull character={character} />
       </div>
     </div>

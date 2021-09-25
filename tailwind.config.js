@@ -8,6 +8,9 @@ module.exports = {
       xs: '475px',
       ...defaultTheme.screens,
     },
+    height: {
+      245: '35rem',
+    },
     extend: {
       colors: {
         gray: {
