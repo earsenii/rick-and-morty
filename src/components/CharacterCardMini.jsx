@@ -7,8 +7,8 @@ function CharacterCardMini({ character }) {
       {character.map((item, index) => (
         <Link to={`/characters/${item.id}`}>
           <div
-            key={index}
-            className="overflow-hidden relative justify-end  cursor-pointer flex flex-col rounded-md bg-gray-850 w-60 h-48 z-50 object-cover text-white transform transition duration-500 hover:scale-105 ml-3">
+            key={item.id}
+            className="overflow-hidden relative justify-end  cursor-pointer flex flex-col rounded-md bg-gray-850 w-56 h-40 z-50 object-cover text-white transform transition duration-500 hover:scale-105 md:ml-2 md:mb-2 lg:w-60 lg:h-56 xl:w-64 xl:h-60">
             <img
               src={item.image}
               alt={item.name}
