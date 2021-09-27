@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import CharacterCardFull from '../components/CharacterCardFull';
+import Navbar from '../components/Navbar';
 
 function CharacterFull({ match }) {
   const {
@@ -45,7 +46,9 @@ function CharacterFull({ match }) {
 
   return (
     <div className="bg-gray-850 min-w-full min-h-screen flex justify-center">
-      <div className="w-3/4 mt-5 flex justify-center">
+      <Navbar />
+
+      <div className="w-3/4 lg:mt-20 mt-16 flex justify-center">
         <CharacterCardFull character={character} />
       </div>
     </div>
