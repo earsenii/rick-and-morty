@@ -21,7 +21,8 @@ function Characters() {
       }
     }
     getCharacter();
-  }, [character, currentPage, fetching]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [fetching]);
 
   React.useEffect(() => {
     document.addEventListener('scroll', scrollHandler);
