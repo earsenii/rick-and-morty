@@ -6,14 +6,39 @@ import Navbar from '../components/Navbar';
 
 function Characters() {
   const [character, setCharacter] = React.useState([]);
+  const [currentPage, setCurrentPage] = React.useState(1);
+  const [fetching, setFetching] = React.useState(true);
 
   React.useEffect(() => {
     async function getCharacter() {
-      const characters = await axios.get('https://rickandmortyapi.com/api/character');
-      setCharacter(characters.data.results);
+      if (fetching) {
+        const characters = await axios.get(
+          `https://rickandmortyapi.com/api/character/?page=${currentPage}`,
+        );
+        setCharacter([...character, ...characters.data.results]);
+        setCurrentPage((prevState) => prevState + 1);
+        setFetching(false);
+      }
     }
     getCharacter();
+  }, [character, currentPage, fetching]);
+
+  React.useEffect(() => {
+    document.addEventListener('scroll', scrollHandler);
+    return function () {
+      document.removeEventListener('scroll', scrollHandler);
+    };
   }, []);
+
+  const scrollHandler = (e) => {
+    if (
+      e.target.documentElement.scrollHeight -
+        (e.target.documentElement.scrollTop + window.innerHeight) <
+      100
+    ) {
+      setFetching(true);
+    }
+  };
 
   return (
     <div className="bg-gray-850 min-w-full min-h-screen flex flex-col justify-center items-center">
@@ -22,7 +47,7 @@ function Characters() {
       </div>
 
       <div className="w-3/4 mt-5 flex flex-col space-y-2  items-center justify-center flex-wrap md:flex-row md:items-start md:space-x-0 md:space-y-0">
-        <CharacterCardMini character={character} />
+        <CharacterCardMini key={character.id} character={character} />
       </div>
     </div>
   );
