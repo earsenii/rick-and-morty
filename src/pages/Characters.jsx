@@ -43,11 +43,11 @@ function Characters() {
 
   return (
     <div className="bg-gray-850 min-w-full min-h-screen flex flex-col justify-center items-center">
-      <div className="flex justify-center w-full">
+      <div className="flex justify-center w-full fixed top-0 z-50">
         <Navbar />
       </div>
 
-      <div className="w-3/4 mt-5 flex flex-col space-y-2  items-center justify-center flex-wrap md:flex-row md:items-start md:space-x-0 md:space-y-0">
+      <div className="w-3/4 lg:mt-20 mt-16 flex flex-col space-y-2 items-center justify-center flex-wrap md:flex-row md:items-start md:space-x-0 md:space-y-0 z-0">
         <CharacterCardMini key={character.id} character={character} />
       </div>
     </div>
