@@ -8,6 +8,7 @@ function Characters() {
   const [character, setCharacter] = React.useState([]);
   const [currentPage, setCurrentPage] = React.useState(1);
   const [fetching, setFetching] = React.useState(true);
+  const [value, setValue] = React.useState('');
 
   React.useEffect(() => {
     async function getCharacter() {
@@ -41,11 +42,19 @@ function Characters() {
     }
   };
 
+  const onChangeSearchInput = (event) => {
+    setValue(event.target.value);
+  };
+
+  const filtredCharacters = character.filter((item) =>
+    item.name.toLowerCase().includes(value.toLowerCase()),
+  );
+
   return (
     <div className="bg-gray-850 min-w-full min-h-screen flex flex-col justify-center items-center">
-      <Navbar />
+      <Navbar onChangeSearchInput={onChangeSearchInput} />
       <div className="w-3/4 lg:mt-20 mt-16 flex flex-col space-y-2 items-center justify-center flex-wrap md:flex-row md:items-start md:space-x-0 md:space-y-0 z-0">
-        <CharacterCardMini key={character.id} character={character} />
+        <CharacterCardMini key={character.id} character={filtredCharacters} />
       </div>
     </div>
   );
